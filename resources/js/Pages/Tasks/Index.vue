@@ -26,7 +26,7 @@ function destroy(id, name) {
     <AuthenticatedLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                Tasks
+                Tasks List
             </h2>
         </template>
 
@@ -75,14 +75,14 @@ function destroy(id, name) {
                                 </thead>
                                 <tbody>
                                 <tr
-                                    v-for="(task, index) in tasks"
+                                    v-for="(task, index) in tasks.data"
                                     :key="task.id"
                                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                                 >
                                     <td
                                         class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
                                     >
-                                        {{ index + 1 }}
+                                        {{ (tasks.current_page - 1) * 10 + index + 1 }}
                                     </td>
 
                                     <td
@@ -124,11 +124,26 @@ function destroy(id, name) {
                                 </tbody>
                             </table>
                         </div>
+                        <div class="mt-4">
+                            <ul class="flex justify-center space-x-2">
+                                <li
+                                    v-for="page in tasks.last_page"
+                                    :key="page"
+                                    :class="{ active: tasks.current_page === page }"
+                                >
+                                    <a
+                                        @click.prevent="$inertia.visit(`http://localhost:8000/task?page=${page}`)"
+                                        href="#"
+                                        class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                                    >
+                                        {{ page }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </AuthenticatedLayout>
 </template>
