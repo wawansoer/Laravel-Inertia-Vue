@@ -7,64 +7,70 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About This Repository 
+## About This Repository
 
-This is a full-stack project simple CRUD project with 
+This is a full-stack project simple CRUD project with
 
-- Laravel
-- Inertia
-- Vue
+-   Laravel
+-   Inertia
+-   Vue
 
 ## Prerequisites
 
 Before you begin, make sure you have the following prerequisites installed:
-- PHP and Composer
-- Laravel CLI
-- Node.js and npm
-- MySQL 
 
-## How To Start The Project 
+-   PHP and Composer
+-   Laravel CLI
+-   Node.js and npm
+-   MySQL
 
-- Install dependency using composer by run this code : 
+## How To Start The Project
+
+-   Install dependency using composer by run this code :
+
     ```console
-    composer install 
+    composer install
     ```
 
-- Install dependency using NPM by run this code :
+-   Install dependency using NPM by run this code :
+
     ```console
-    npm install 
+    npm install
     ```
 
-- Set up your .env using this command  :
+-   Set up your .env using this command :
     ```console
-    cp env.example .env
+    cp .env.example .env
     ```
-- Make sure database connection configure correctly and run this code to generate tables : 
+-   Make sure database connection configure correctly and run this code to generate tables :
+    ```console
+    php artisan key:generate
+    ```
+-   Make sure database connection configure correctly and run this code to generate tables :
     ```console
     php artisan migrate
     ```
-- Generate dummy data by using this command :
+-   Generate dummy data by using this command :
     ```console
     php artisan db:seed
     ```
-- Run Back End By using this  :
+-   Run Back End By using this :
     ```console
     php artisan serve
     ```
-- Run Front End By using this  :
+-   Run Front End By using this :
     ```console
     npm run dev
     ```
-  or you can build the front end app by using : 
+    or you can build the front end app by using :
     ```console
     npm run build
     ```
-  if you build the Front End App you don't have to run _npm run dev_ to use thi application 
-- Run this code to know what's inside this app : 
+    if you build the Front End App you don't have to run _npm run dev_ to use thi application
+-   Run this code to know what's inside this app :
     ```console
     php artisan route:list
     ```
-
 
 ## License
 
