@@ -19,8 +19,11 @@ class TaskController extends Controller
         $user = Auth::user();
 
         // Get the user's tasks
-        $tasks = Task::with('category')->where('user_id', $user->id)->get();
+        $tasks = Task::with('category')
+                        ->where('user_id', $user->id)
+                        ->paginate(10);
 
+//        dd($tasks);
         return Inertia::render(
             'Tasks/Index',
             [
